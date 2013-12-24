@@ -1,0 +1,176 @@
+<!DOCTYPE HTML>
+<html ng-app="DV" lang="zh_CN">
+<meta http-equiv="pragma" content="no-cache"/>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+<header>
+    <title>“中国梦•广州梦•广大梦”微电影大赛</title>
+    <script type="text/javascript" src="../lib/jQuery/jquery-1.8.3.min.js"></script>
+    <script type="text/javascript" src="../lib/angular/angular.min.js"></script>
+    <script type="text/javascript" src="../lib/angular/angular-resource.min.js"></script>
+    <script type="text/javascript" src="../lib/bootstrap/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../JS/DV.js"></script>
+    <link type="text/css" rel="stylesheet" href="../lib/bootstrap/css/bootstrap.min.css">
+    <link type="text/css" rel="stylesheet" href="../lib/bootstrap/css/bootstrap-responsive.min.css">
+    <link type="text/css" rel="stylesheet" href="../CSS/dv_index.css">
+
+    <!--<img src="../../image/login_background.jpg" class="img-polaroid">-->
+</header>
+<body ng-controller="dvCtrl">
+<div id="banner" class="">
+    <img src="../jpg/DV.jpg" width="982" height="162">
+</div>
+<div class="subnav" id="banner_btn" style="padding:0px;">
+    <ul class="nav nav-pills">
+        <li><a href="index.html" class="select">首页</a></li>
+        <li><a href="inf.html">参赛信息</a></li>
+        <li><a href="http://newsasp.gzhu.edu.cn/dvmatch/index.asp">往届回顾</a></li>
+        <li><a href="dv.html" >微知识</a></li>
+    </ul>
+</div>
+<div id="play" class="carousel slide">
+    <div class="div_top">图片展示</div>
+    <div class="carousel-inner hide">
+        <div class="item active">
+            <img src="../jpg/v1.png" alt="" class="img_size">
+
+            <div class="carousel-caption">
+                <p>
+                    1
+                </p>
+            </div>
+        </div>
+        <div class="item">
+            <img src="../jpg/v2.jpg" alt="" class="img_size">
+
+            <div class="carousel-caption">
+                <p>
+                    2
+                </p>
+            </div>
+        </div>
+        <div class="item">
+            <img src="../jpg/v3.jpg" alt="" class="img_size">
+
+            <div class="carousel-caption">
+                <p>
+                    3
+                </p>
+            </div>
+        </div>
+    </div>
+    <div class="carousel-inner">
+        <!--<div class="item ng-scope active">-->
+            <!--<img src="../jpg/v1.png" alt="" class="img_size">-->
+
+            <!--<div class="carousel-caption">-->
+                <!--<p>-->
+                    <!--1-->
+                <!--</p>-->
+            <!--</div>-->
+        <!--</div>-->
+        <div class="item" ng-class="{'active':{{$first}} }" ng-repeat="dv in DV_list">
+            <a ng-href="{{ DV_list[$index].href}}" ng-click= "add(dv.work)" >
+            <div ng-style="img_list[$index]" class="img_size" ></div>
+            <div class="carousel-caption">
+                <p>
+                    {{ $index+1 }} {{ dv.work }}
+                </p>
+            </div>
+            </a>
+        </div>
+    </div>
+    <a class="left carousel-control" href="#play" data-slide="prev">&lsaquo;</a>
+    <a class="right carousel-control" href="#play" data-slide="next">&rsaquo;</a>
+</div>
+<div id="inf">
+    <div class="div_top">活动说明</div>
+    <div class="well inf_box">
+    <b>大赛主题</b><br>
+        （1）中国梦·青春志<br>
+        以学生自己的生活经验与体验经历诠释青春的态度，积极挖掘经典励志故事，激发青年奋发向上，加强青少年的世界观、人生观、价值观教育建设。<br>
+        （2）广州梦·新城展<br>
+        广州被誉为岭南文化中心地，拥有丰厚的历史文化资源。融合现代广州的时尚消费与文化活力，从学生的角度，表达对广州这座岭南名城的新型发展的理解和建议，感受城市变化带来的生活变化。用影像展示岭南风采，打造粤韵文化名片。<br>
+        （3）广大梦·扬帆航<br>
+        每位大学生都有对自己未来的理想目标，如何构织自己心目中的规划蓝图，探索和凝练自己的人生路，用影视语言充分展现“广大精神”与大学自身存在和发展中形成的具有独特气质的精神形式的文明成果。<br>
+        （4）我的梦·由我创<br>
+        青葱的岁月总是那么令人憧憬向往，大学四年的学习、生活感悟谱写着一首首动听的成长乐章，让学生充分展现自我，发挥创意，以自己的阅历见解展现当代大学生朝气蓬勃的青春新貌。<br>     </div>
+</div>
+<div id="rank" >
+    <div class="div_top">点击排行</div>
+    <table class="table">
+        <tbody>
+        <tr ng-repeat="rank in rank">
+            <td>
+                <a ng-href="{{ rank.href }}" class="rank_list" ng-click= "add(rank.name)">
+                    <div class="a_width">
+                    <b> {{ $index+1 }}、</b>{{rank.name}} {{rank.account}}次
+                    </div>
+                </a>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+    <div class="hide">
+    <div class="div_top">获奖作品</div>
+    <table class="table">
+        <tbody>
+        <tr>
+            <td>
+                <a ng-href="{{ DV_list[0].href}}" class="rank_list" ng-click= "add(lists[0].name)">
+                    <div class="a_width">
+                    <b> 1、</b>{{lists[0].name}} <span class="pull-right">一等奖</span>
+                    </div>
+                </a>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <a ng-href="{{ DV_list[1].href}}" class="rank_list" ng-click= "add(lists[1].name)">
+                    <div class="a_width">
+                        <b> 2、</b>{{lists[1].name}} <span class="pull-right">二等奖</span>
+                    </div>
+                </a>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <a ng-href="{{ DV_list[2].href}}" class="rank_list" ng-click= "add(lists[2].name)">
+                    <div class="a_width">
+                        <b> 3、</b>{{lists[2].name}} <span class="pull-right">三等奖</span>
+                    </div>
+                </a>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+    </div>
+</div>
+<div id="dv_show" >
+    <div class="div_top">作品展示</div>
+    <div class="dv_list" ng-repeat="dv in DV_list">
+        <a ng-href="{{ DV_list[$index].href}}" style="width:100%;height: 100%;" >
+            <div class="film_jpg" ng-style="img_list[$index]" ng-click= "add(dv.work)" ></div>
+
+            <div class="dv_text text-hide">
+                <b>作品：</b>
+                {{dv.work}}
+            </div>
+            <div class="dv_text text-hide">
+                <b>作者：</b>{{dv.author}}
+            </div>
+            <div class="dv_text text-hide">
+                <b>学院：</b>{{dv.college}}
+            </div>
+            <div class="dv_text text-hide">
+                <b>浏览：</b>{{lists[$index].account}}次
+            </div>
+        </a>
+    </div>
+</div>
+<div class="foot well">
+        “中国梦•广州梦•广大梦”微电影大赛专题<br>广州大学新闻中心网络部制作维护<br>版权所有
+        <span style="font-family:Georgia, 'Times New Roman', Times, serif">&copy;</span>2013
+        <a href="http://news.gzhu.edu.cn/newsxp/index.jsp">广州大学新闻中心</a>. All Rights Reserved <br />
+</div>
+</body>
+</html>
