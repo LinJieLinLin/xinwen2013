@@ -8,10 +8,11 @@
 
 function dvCtrl($scope, $resource) {
 //    $scope.c = {'color':'red','font-size':'1.5em'} //ng-style="c";
-
+    $('.carousel').carousel({
+        interval: 3000
+    })//初始化轮播
     $scope.lists = angular.fromJson(localStorage.lists);
     $scope.rank = angular.fromJson(localStorage.rank);
-    $scope.a = 0;
     //作品列表
     $scope.DV_list = [
         {work:"晨露逐梦",author:"",college:"",href:"http://202.192.18.200/play.php?id=31"},
@@ -23,12 +24,13 @@ function dvCtrl($scope, $resource) {
         {work:"舞",author:"",college:"",href:"http://202.192.18.200/play.php?id=38"},
         {work:"young for you",author:"",college:"",href:"http://202.192.18.200/play.php?id=39"},
         {work:"错位",author:"",college:"",href:"http://202.192.18.200/play.php?id=42"},
-        {work:"从头做起",author:"",college:"",href:"http://202.192.18.200/play.php?id=43"},
+//        {work:"从头做起",author:"",college:"",href:"http://202.192.18.200/play.php?id=43"},
         {work:"搭讪的艺术",author:"",college:"",href:"http://202.192.18.200/play.php?id=44"},
         {work:"环卫工",author:"",college:"",href:"http://202.192.18.200/play.php?id=45"},
         {work:"第一次",author:"",college:"",href:"http://202.192.18.200/play.php?id=46"},
         {work:"恶意",author:"",college:"",href:"http://202.192.18.200/play.php?id=47"},
         {work:"渐渐爱",author:"",college:"",href:"http://202.192.18.200/play.php?id=48"},
+        {work:"她与他的故事",author:"",college:"",href:"http://202.192.18.200/play.php?id=49"},
         {work:"重遇未知的自己",author:"",college:"",href:"http://202.192.18.200/play.php?id=51"},
         {work:"女友记",author:"",college:"",href:"http://202.192.18.200/play.php?id=52"},
         {work:"青春方程式",author:"",college:"",href:"http://202.192.18.200/play.php?id=54"},
@@ -38,12 +40,13 @@ function dvCtrl($scope, $resource) {
         {work:"中国梦 黄埔魂",author:"",college:"",href:"http://202.192.18.200/play.php?id=58"},
         {work:"演员？导演",author:"",college:"",href:"http://202.192.18.200/play.php?id=59"},
         {work:"踩画",author:"",college:"",href:"http://202.192.18.200/play.php?id=60"},
-        {work:"我们这一班",author:"",college:"",href:"http://202.192.18.200/play.php?id=61"}
+        {work:"我们这一班",author:"",college:"",href:"http://202.192.18.200/play.php?id=61"},
+        {work:"100 days of you",author:"",college:"",href:"http://202.192.18.200/play.php?id=62"},
+        {work:"冠军梦,再起航",author:"",college:"",href:"http://202.192.18.200/play.php?id=63"},
+        {work:"集中营一",author:"",college:"",href:"http://202.192.18.200/play.php?id=64"},
+        {work:"集中营二",author:"",college:"",href:"http://202.192.18.200/play.php?id=65"},
     ]
     //作品图片列表
-    $scope.wh = {
-        "background-size":"290px 218px"
-    }
     $scope.img_list = [
         {"background-image": "url(../jpg/0.png)"},
         {"background-image": "url(../jpg/1.png)"},
@@ -70,7 +73,10 @@ function dvCtrl($scope, $resource) {
         {"background-image": "url(../jpg/22.png)"},
         {"background-image": "url(../jpg/23.png)"},
         {"background-image": "url(../jpg/24.png)"},
-        {"background-image": "url(../jpg/25.png)"}
+        {"background-image": "url(../jpg/25.png)"},
+        {"background-image": "url(../jpg/26.png)"},
+        {"background-image": "url(../jpg/27.png)"},
+        {"background-image": "url(../jpg/28.png)"},
     ];
 
     $scope.read_list = function () {

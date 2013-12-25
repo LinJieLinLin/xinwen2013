@@ -19,7 +19,7 @@
 <div id="banner" class="">
     <img src="../jpg/DV.jpg" width="982" height="162">
 </div>
-<div class="subnav" id="banner_btn" style="padding:0px;">
+<div class="subnav" id="banner_btn">
     <ul class="nav nav-pills">
         <li><a href="index.html" class="select">首页</a></li>
         <li><a href="inf.html">参赛信息</a></li>
@@ -29,46 +29,8 @@
 </div>
 <div id="play" class="carousel slide">
     <div class="div_top">图片展示</div>
-    <div class="carousel-inner hide">
-        <div class="item active">
-            <img src="../jpg/v1.png" alt="" class="img_size">
-
-            <div class="carousel-caption">
-                <p>
-                    1
-                </p>
-            </div>
-        </div>
-        <div class="item">
-            <img src="../jpg/v2.jpg" alt="" class="img_size">
-
-            <div class="carousel-caption">
-                <p>
-                    2
-                </p>
-            </div>
-        </div>
-        <div class="item">
-            <img src="../jpg/v3.jpg" alt="" class="img_size">
-
-            <div class="carousel-caption">
-                <p>
-                    3
-                </p>
-            </div>
-        </div>
-    </div>
-    <div class="carousel-inner">
-        <!--<div class="item ng-scope active">-->
-            <!--<img src="../jpg/v1.png" alt="" class="img_size">-->
-
-            <!--<div class="carousel-caption">-->
-                <!--<p>-->
-                    <!--1-->
-                <!--</p>-->
-            <!--</div>-->
-        <!--</div>-->
-        <div class="item" ng-class="{'active':{{$first}} }" ng-repeat="dv in DV_list">
+    <div class="carousel-inner ">
+        <div id="{{ $index }}" class="item" ng-class="{'active':{{$first}} }" ng-repeat="dv in DV_list">
             <a ng-href="{{ DV_list[$index].href}}" ng-click= "add(dv.work)" >
             <div ng-style="img_list[$index]" class="img_size" ></div>
             <div class="carousel-caption">

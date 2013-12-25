@@ -14,6 +14,8 @@ body{
     height: 38px;
     border: 0px solid rgb(183, 223, 226);
     margin: auto;
+    padding:0px;
+    font-weight: bold;
 }
 #play{
     width: 290px;
@@ -99,7 +101,7 @@ a {
 }
 .subnav .nav > li > a:hover {
 	font-size:1em;
-	background-color:#D4F1F1;
+	background-color:#6FF056;
 	}
 .carousel-control {
     background: none repeat scroll 0 0 #222222;
@@ -183,7 +185,7 @@ a {
 }
 .select{
     font-size:1em;
-    background-color:#D4F1F1;
+    background-color:#6FF056;
 }
 .img_size{
     width:290px;
