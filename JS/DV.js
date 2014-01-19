@@ -11,40 +11,41 @@ function dvCtrl($scope, $resource) {
     $('.carousel').carousel({
         interval: 3000
     })//初始化轮播
+
     $scope.lists = angular.fromJson(localStorage.lists);
     $scope.rank = angular.fromJson(localStorage.rank);
     //作品列表
+    $scope.http = "http://202.192.18.200/";
     $scope.DV_list = [
-        {work:"晨露逐梦",author:"",college:"",href:"http://202.192.18.200/play.php?id=31"},
-        {work:"215",author:"",college:"",href:"http://202.192.18.200/play.php?id=33"},
-        {work:"致我们终将逝去的青春",author:"",college:"",href:"http://202.192.18.200/play.php?id=34"},
-        {work:"伞",author:"",college:"",href:"http://202.192.18.200/play.php?id=35"},
-        {work:"CLOCK",author:"",college:"",href:"http://202.192.18.200/play.php?id=36"},
-        {work:"Final",author:"",college:"",href:"http://202.192.18.200/play.php?id=37"},
-        {work:"舞",author:"",college:"",href:"http://202.192.18.200/play.php?id=38"},
-        {work:"young for you",author:"",college:"",href:"http://202.192.18.200/play.php?id=39"},
-        {work:"错位",author:"",college:"",href:"http://202.192.18.200/play.php?id=42"},
-//        {work:"从头做起",author:"",college:"",href:"http://202.192.18.200/play.php?id=43"},
-        {work:"搭讪的艺术",author:"",college:"",href:"http://202.192.18.200/play.php?id=44"},
-        {work:"环卫工",author:"",college:"",href:"http://202.192.18.200/play.php?id=45"},
-        {work:"第一次",author:"",college:"",href:"http://202.192.18.200/play.php?id=46"},
-        {work:"恶意",author:"",college:"",href:"http://202.192.18.200/play.php?id=47"},
-        {work:"渐渐爱",author:"",college:"",href:"http://202.192.18.200/play.php?id=48"},
-        {work:"她与他的故事",author:"",college:"",href:"http://202.192.18.200/play.php?id=49"},
-        {work:"重遇未知的自己",author:"",college:"",href:"http://202.192.18.200/play.php?id=51"},
-        {work:"女友记",author:"",college:"",href:"http://202.192.18.200/play.php?id=52"},
-        {work:"青春方程式",author:"",college:"",href:"http://202.192.18.200/play.php?id=54"},
-        {work:"《感廣》",author:"",college:"",href:"http://202.192.18.200/play.php?id=55"},
-        {work:"邻居",author:"",college:"",href:"http://202.192.18.200/play.php?id=56"},
-        {work:"谁的快递",author:"",college:"",href:"http://202.192.18.200/play.php?id=57"},
-        {work:"中国梦 黄埔魂",author:"",college:"",href:"http://202.192.18.200/play.php?id=58"},
-        {work:"演员？导演",author:"",college:"",href:"http://202.192.18.200/play.php?id=59"},
-        {work:"踩画",author:"",college:"",href:"http://202.192.18.200/play.php?id=60"},
-        {work:"我们这一班",author:"",college:"",href:"http://202.192.18.200/play.php?id=61"},
-        {work:"100 days of you",author:"",college:"",href:"http://202.192.18.200/play.php?id=62"},
-        {work:"冠军梦,再起航",author:"",college:"",href:"http://202.192.18.200/play.php?id=63"},
-        {work:"集中营一",author:"",college:"",href:"http://202.192.18.200/play.php?id=64"},
-        {work:"集中营二",author:"",college:"",href:"http://202.192.18.200/play.php?id=65"},
+        {work:"晨露逐梦",author:"",college:"",href:$scope.http+"play.php?id=31"},
+        {work:"215",author:"翁华梅、谢芷玲、李素芬、劳淑欣、李淑仪、孙艳兵",college:"教育学院",href:$scope.http+"play.php?id=33"},
+        {work:"致我们终将逝去的青春",author:"王建民、陈贤昌、胡大芬、熊忆、沈仰云、施贵新",college:"美术与设计学院",href:$scope.http+"play.php?id=34"},
+        {work:"伞",author:"陈银香、李真真、梁诗婷、徐晓君",college:"人文学院",href:$scope.http+"play.php?id=35"},
+        {work:"CLOCK",author:"范文湘、欧嘉俊、骆青彤、庄楚妍、彭诗伊",college:"教育学院",href:$scope.http+"play.php?id=36"},
+        {work:"Final",author:"",college:"",href:$scope.http+"play.php?id=37"},
+        {work:"舞",author:"樊鹏程、孙文睿、陈若君",college:"新闻与传播学院",href:$scope.http+"play.php?id=38"},
+        {work:"young for you",author:"冯静雯、黄玉堂",college:"美术与设计学院",href:$scope.http+"play.php?id=39"},
+        {work:"错位",author:"陈敏湘、陈泽豪、李荟、王秀霞、郭瀚炫、欧苑英华",college:"人文学院",href:$scope.http+"play.php?id=42"},
+        {work:"搭讪的艺术",author:"曾冠、陈晓红、黄子良、喻浩",college:"人文学院",href:$scope.http+"play.php?id=44"},
+        {work:"环卫工",author:"",college:"",href:$scope.http+"play.php?id=45"},
+        {work:"第一次",author:"黄少少、谭泳欣、茹嘉钰、黄婉华、杨嘉颖",college:"人文学院",href:$scope.http+"play.php?id=46"},
+        {work:"恶意",author:"苏殷霖、肖嘉妮、苏艾青、梁晓文、郑嘉盈",college:"人文学院",href:$scope.http+"play.php?id=47"},
+        {work:"渐渐爱",author:"周文婷、蓝静雅、江玉怡、柳贝、杨鑫",college:"人文学院",href:$scope.http+"play.php?id=48"},
+        {work:"她与他的故事",author:"",college:"",href:$scope.http+"play.php?id=49"},
+        {work:"重遇未知的自己",author:"卓丽珊、江玉怡",college:"教育学院",href:$scope.http+"play.php?id=51"},
+        {work:"女友记",author:"肖文敏、徐漫菊、陈嘉文、周映雪、李土清、刘江霞",college:"人文学院",href:$scope.http+"play.php?id=52"},
+        {work:"青春方程式",author:"黎智荣、苏海伦",college:"新闻与传播学院、法学院",href:$scope.http+"play.php?id=54"},
+        {work:"《感廣》",author:"",college:"",href:$scope.http+"play.php?id=55"},
+        {work:"邻居",author:"罗瑜婷、文启健、陈静燚",college:"美术与设计学院",href:$scope.http+"play.php?id=56"},
+        {work:"谁的快递",author:"李萍萍、詹炜瑜、张土英、吴玉梅",college:"教育学院",href:$scope.http+"play.php?id=57"},
+        {work:"中国梦 黄埔魂",author:"黄志军、庄丹丹、孙艳兵、罗艺、柳贝",college:"教育学院",href:$scope.http+"play.php?id=58"},
+        {work:"演员？导演",author:"黄嘉莹、田翠爽、陈嘉琪、冼浩华、黄健怡、饶宇杰",college:"教育学院、人文学院、土木学院",href:$scope.http+"play.php?id=59"},
+        {work:"踩画",author:"沈卫卫、刘威、朱清仪、张丽萍、黄金淳、陈锦仪、陈道",college:"新闻与传播学院",href:$scope.http+"play.php?id=60"},
+        {work:"我们这一班",author:"廖舒婷、屈颖妍、郑艳华、梁伟东、马俊",college:"美术与设计学院",href:$scope.http+"play.php?id=61"},
+        {work:"100 days of you",author:"",college:"",href:$scope.http+"play.php?id=62"},
+        {work:"冠军梦,再起航",author:"",college:"",href:$scope.http+"play.php?id=63"},
+        {work:"集中营一",author:"",college:"",href:$scope.http+"play.php?id=64"},
+        {work:"集中营二",author:"",college:"",href:$scope.http+"play.php?id=65"},
     ]
     //作品图片列表
     $scope.img_list = [
@@ -78,6 +79,11 @@ function dvCtrl($scope, $resource) {
         {"background-image": "url(../jpg/27.png)"},
         {"background-image": "url(../jpg/28.png)"},
     ];
+    //友情连接
+    $scope.links=[{name:"珠江在线",href:"http://www.proxtv.com"},
+        {name:"广大主页",href:"http://www.gzhu.edu.cn/"},
+        {name:"新闻中心",href:"http://news.gzhu.edu.cn/newsxp/index.jsp"}
+    ]
 
     $scope.read_list = function () {
         $.post("../src/DV.php", {aa: -1},
