@@ -85,6 +85,14 @@ function dvCtrl($scope, $resource) {
         {name:"新闻中心",href:"http://news.gzhu.edu.cn/newsxp/index.jsp"}
     ]
 
+    $scope.aaa = function () {
+        $.post("../src/DV.asp", {aa: -1},
+            function (data) {
+                alert(data);
+                alert(data.length);
+            },"json")
+    }
+    $scope.aaa();
     $scope.read_list = function () {
         $.post("../src/DV.php", {aa: -1},
         function (data) {
